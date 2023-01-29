@@ -3,8 +3,13 @@ var Dog = /** @class */ (function () {
         this.name = 'Zoe';
         this.haircolor = ['red', 'white'];
         this.date = new Date();
-        this.time = this.ageCalck(10);
-        this.iteration = 0;
+        this.time = this.ageCalck(11);
+        // iteration = 0
+        // render(){
+        //     for(let i = this.iteration;i<=this.time;i++){
+        //         console.log(i)
+        //     }
+        // }
     }
     Dog.prototype.ageCalck = function (x) {
         var y = this.date.getFullYear();
@@ -19,14 +24,9 @@ var Dog = /** @class */ (function () {
         par.classList.add('ts-txt');
         // console.log(this.time)
     };
-    Dog.prototype.render = function () {
-        for (var i = this.iteration; i <= this.time; i++) {
-            console.log(i);
-        }
-    };
     return Dog;
 }());
 var c = new Dog();
 c.time;
 c.possIt();
-c.render();
+// c.render()

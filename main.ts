@@ -7,7 +7,7 @@ class Dog{
         console.log(y-x)
         return x
     }
-    time = this.ageCalck(10)
+    time = this.ageCalck(11)
     possIt(){
         const par = document.createElement('p')
         document.body.appendChild(par)
