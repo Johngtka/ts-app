@@ -5,6 +5,9 @@ var Dog = /** @class */ (function () {
         this.date = new Date();
         this.time = this.ageCalck(11);
         this.iteration = 0;
+        // call(z:number){
+        //     console.log(z/2)
+        // }
     }
     Dog.prototype.ageCalck = function (x) {
         var y = this.date.getFullYear();
@@ -29,18 +32,24 @@ var Dog = /** @class */ (function () {
     };
     return Dog;
 }());
-var D = new Dog();
-D.possIt();
-D.render();
+var A = new Dog();
+A.possIt();
+A.render();
 var time = /** @class */ (function () {
     function time() {
-        this.timer = D.date;
+        this.timer = A.date;
+        // fer(x = this.ref){
+        //     let z = x*2137
+        //     return D.call(z)
+        // }
     }
+    // private ref = 4
+    // protected papaj = 4*2137
     time.prototype.DoneClk = function () {
-        var clk = document.createElement('p');
-        document.body.appendChild(clk);
-        clk.classList.add('timer');
-        return clk;
+        var tim = document.createElement('p');
+        document.body.appendChild(tim);
+        tim.classList.add('timer');
+        return tim;
     };
     time.prototype.clk = function () {
         var day = this.timer.getDate();
@@ -52,5 +61,14 @@ var time = /** @class */ (function () {
     };
     return time;
 }());
-var C = new time();
-C.clk();
+var B = new time();
+B.DoneClk();
+B.clk();
+// B.fer()
+// class doom extends time{
+//     render(){
+//         return console.log(this.papaj)
+//     }
+// }
+// const C = new doom()
+// C.render()
