@@ -4,12 +4,7 @@ var Dog = /** @class */ (function () {
         this.haircolor = ['red', 'white'];
         this.date = new Date();
         this.time = this.ageCalck(11);
-        // iteration = 0
-        // render(){
-        //     for(let i = this.iteration;i<=this.time;i++){
-        //         console.log(i)
-        //     }
-        // }
+        this.iteration = 0;
     }
     Dog.prototype.ageCalck = function (x) {
         var y = this.date.getFullYear();
@@ -24,9 +19,38 @@ var Dog = /** @class */ (function () {
         par.classList.add('ts-txt');
         // console.log(this.time)
     };
+    Dog.prototype.render = function () {
+        for (var i = this.iteration; i < this.time; i++) {
+            console.log(i);
+            if (i >= this.time - 1) {
+                console.log('End off counting');
+            }
+        }
+    };
     return Dog;
 }());
-var c = new Dog();
-c.time;
-c.possIt();
-// c.render()
+var D = new Dog();
+D.possIt();
+D.render();
+var time = /** @class */ (function () {
+    function time() {
+        this.timer = D.date;
+    }
+    time.prototype.DoneClk = function () {
+        var clk = document.createElement('p');
+        document.body.appendChild(clk);
+        clk.classList.add('timer');
+        return clk;
+    };
+    time.prototype.clk = function () {
+        var day = this.timer.getDate();
+        var month = this.timer.getMonth() + 1;
+        var year = this.timer.getFullYear();
+        var sec = this.timer.getSeconds();
+        var clock = this.DoneClk();
+        clock.innerHTML = '<i>' + day + '.' + month + '.' + year + ' ' + sec + '</i>';
+    };
+    return time;
+}());
+var C = new time();
+C.clk();

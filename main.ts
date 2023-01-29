@@ -16,14 +16,35 @@ class Dog{
         par.classList.add('ts-txt')
         // console.log(this.time)
     }
-    // iteration = 0
-    // render(){
-    //     for(let i = this.iteration;i<=this.time;i++){
-    //         console.log(i)
-    //     }
-    // }
+    iteration = 0
+    render(){
+        for(let i = this.iteration; i<this.time; i++){
+            console.log(i)
+            if(i>=this.time-1){
+                console.log('End off counting')
+            }
+        }
+    }
 }
-const c = new Dog()
-c.time
-c.possIt()
-// c.render()
+const D = new Dog()
+D.possIt()
+D.render()
+class time{
+    timer = D.date
+    DoneClk(){
+        let clk = document.createElement('p')
+        document.body.appendChild(clk)
+        clk.classList.add('timer')
+        return clk
+    }
+    clk(){
+        let day = this.timer.getDate()
+        let month = this.timer.getMonth()+1
+        let year = this.timer.getFullYear()
+        let sec = this.timer.getSeconds()
+        let clock = this.DoneClk()
+        clock.innerHTML ='<i>'+day+'.'+month+'.'+year+' '+sec+'</i>'
+    }
+}
+const C = new time()
+C.clk()
