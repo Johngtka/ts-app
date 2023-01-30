@@ -61,13 +61,9 @@ class main extends time{
             const opt = document.createElement('div')
             opt.setAttribute('id','option'+i)
             this.flag2.insertAdjacentElement('afterend',opt)
+            opt.style.display = 'inlone-block'
         }
-        return [document.querySelector('#opion1'),document.querySelector('#opion2'),document.querySelector('#opion3'),document.querySelector('#opion4')]
-    }
-    Calck(){
-        let x = this.content()
-        const tab = ['+','-','*','/']
     }
 }
 const m = new main()
-m.Calck()
+m.content()
