@@ -1,3 +1,28 @@
+var main = /** @class */ (function () {
+    function main() {
+        this.title = 'Calkulator app';
+        this.iteration = 1;
+    }
+    main.prototype.view = function () {
+        console.log(this.title);
+        var inp1 = document.querySelector('#l1');
+        var inp2 = document.querySelector('#l2');
+        inp1 === null || inp1 === void 0 ? void 0 : inp1.addEventListener('input', function (event) {
+            var target = event.target;
+            console.log(target.value);
+        });
+        inp2 === null || inp2 === void 0 ? void 0 : inp2.addEventListener('input', function (event) {
+            var target = event.target;
+            console.log(target.value);
+        });
+        var box = document.createElement('div');
+        var d = document.body.appendChild(box);
+        inp2 === null || inp2 === void 0 ? void 0 : inp2.insertAdjacentElement('afterend', d);
+    };
+    return main;
+}());
+var m = new main();
+m.view();
 var Dog = /** @class */ (function () {
     function Dog() {
         this.name = 'Zoe';
@@ -62,7 +87,6 @@ var time = /** @class */ (function () {
     return time;
 }());
 var B = new time();
-B.DoneClk();
 B.clk();
 // B.fer()
 // class doom extends time{

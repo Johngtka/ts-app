@@ -1,7 +1,30 @@
 interface Datas{
-    date: object,
+    date?: object,
     iteration: number,
 }
+class main implements Datas{
+    private title: string = 'Calkulator app'
+    iteration = 1
+    view(){
+        console.log(this.title)
+        const inp1 = document.querySelector('#l1') as HTMLInputElement | null
+        const inp2 = document.querySelector('#l2')as HTMLInputElement | null
+        inp1?.addEventListener('input',(event)=>{
+            const target = event.target as HTMLInputElement
+            console.log(target.value)
+        })
+        inp2?.addEventListener('input',(event)=>{
+            const target = event.target as HTMLInputElement
+            console.log(target.value)
+        })
+        let box = document.createElement('div') as HTMLDivElement
+        let d= document.body.appendChild(box)
+        inp2?.insertAdjacentElement('afterend',d)
+    }
+}
+const m = new main()
+m.view()
+
 class Dog implements Datas{
     private name:string = 'Zoe'
     private haircolor:object = ['red','white']
@@ -60,7 +83,6 @@ class time{
     // }
 }
 const B = new time()
-B.DoneClk()
 B.clk()
 // B.fer()
 // class doom extends time{
