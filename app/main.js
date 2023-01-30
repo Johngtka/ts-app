@@ -45,9 +45,8 @@ class time extends Dog {
         let day = this.timer.getDate();
         let month = this.timer.getMonth() + 1;
         let year = this.timer.getFullYear();
-        let sec = this.timer.getSeconds();
         let clock = this.DoneClk();
-        clock.innerHTML = '<i>' + day + '.' + month + '.' + year + ' ' + sec + '</i>';
+        clock.innerHTML = `<i>${day}.${month}.${year}</i>`;
     }
 }
 const B = new time();
@@ -56,24 +55,22 @@ class main extends time {
     constructor() {
         super(...arguments);
         this.title = 'Calkulator app';
-        this.iteration = 1;
+        this.flag1 = document.querySelector('#l1');
+        this.flag2 = document.querySelector('#l2');
+        this.iteration = 4;
     }
-    view() {
-        console.log(this.title);
-        const inp1 = document.querySelector('#l1');
-        const inp2 = document.querySelector('#l2');
-        inp1 === null || inp1 === void 0 ? void 0 : inp1.addEventListener('input', (event) => {
-            const target1 = event.target;
-            console.log('L1: ' + target1.value);
-        });
-        inp2 === null || inp2 === void 0 ? void 0 : inp2.addEventListener('input', (event) => {
-            const target2 = event.target;
-            console.log('L2: ' + target2.value);
-        });
-        let box = document.createElement('div');
-        let d = document.body.appendChild(box);
-        inp2 === null || inp2 === void 0 ? void 0 : inp2.insertAdjacentElement('afterend', d);
+    content() {
+        for (let i = this.iteration; i >= 1; i--) {
+            const opt = document.createElement('div');
+            opt.setAttribute('id', 'option' + i);
+            this.flag2.insertAdjacentElement('afterend', opt);
+        }
+        return [document.querySelector('#opion1'), document.querySelector('#opion2'), document.querySelector('#opion3'), document.querySelector('#opion4')];
+    }
+    Calck() {
+        let x = this.content();
+        const tab = ['+', '-', '*', '/'];
     }
 }
 const m = new main();
-m.view();
+m.Calck();

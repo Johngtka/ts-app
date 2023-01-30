@@ -1,6 +1,6 @@
 interface Datas{
     date?: object,
-    iteration: number,
+    iteration?: number,
 }
 class Dog implements Datas{
     private name:string = 'Zoe'
@@ -44,9 +44,8 @@ class time extends Dog{
         let day = this.timer.getDate()
         let month = this.timer.getMonth()+1
         let year = this.timer.getFullYear()
-        let sec = this.timer.getSeconds()
         let clock = this.DoneClk()
-        clock.innerHTML ='<i>'+day+'.'+month+'.'+year+' '+sec+'</i>'
+        clock.innerHTML = `<i>${day}.${month}.${year}</i>`
     }
 }
 const B = new time()
@@ -54,23 +53,21 @@ B.clk()
 
 class main extends time{
     private title: string = 'Calkulator app'
-    // iteration = 1
-    view(){
-        console.log(this.title)
-        const inp1 = document.querySelector('#l1') as HTMLInputElement | null
-        const inp2 = document.querySelector('#l2') as HTMLInputElement | null
-        inp1?.addEventListener('input',(event)=>{
-            const target1 = event.target as HTMLInputElement
-            console.log('L1: '+target1.value)
-        })
-        inp2?.addEventListener('input',(event)=>{
-            const target2 = event.target as HTMLInputElement
-            console.log('L2: '+target2.value)
-        })
-        let box = document.createElement('div') as HTMLDivElement
-        let d= document.body.appendChild(box)
-        inp2?.insertAdjacentElement('afterend',d)
+    private flag1: HTMLInputElement = document.querySelector('#l1')
+    private flag2: HTMLInputElement = document.querySelector('#l2')
+    public iteration = 4
+    content(){
+        for(let i = this.iteration; i>=1; i--){
+            const opt = document.createElement('div')
+            opt.setAttribute('id','option'+i)
+            this.flag2.insertAdjacentElement('afterend',opt)
+        }
+        return [document.querySelector('#opion1'),document.querySelector('#opion2'),document.querySelector('#opion3'),document.querySelector('#opion4')]
+    }
+    Calck(){
+        let x = this.content()
+        const tab = ['+','-','*','/']
     }
 }
 const m = new main()
-m.view()
+m.Calck()
