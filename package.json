@@ -1,0 +1,11 @@
+{
+  "name": "ts-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "compile": "tsc --w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
