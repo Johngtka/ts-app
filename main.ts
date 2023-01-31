@@ -57,6 +57,7 @@ class main extends time{
     private flag2: HTMLInputElement = document.querySelector('#l2')
     public iteration = 4
     content(){
+        console.log(this.title)
         for(let i = this.iteration; i>=1; i--){
             const opt = document.createElement('div')
             opt.setAttribute('id','option'+i)
