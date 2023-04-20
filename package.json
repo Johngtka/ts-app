@@ -2,8 +2,10 @@
   "name": "ts-app",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
-    "compile": "tsc --w"
+    "compile": "tsc --w",
+    "format": "prettier --write ./**/*.{ts,html}"
   },
   "keywords": [],
   "author": "",

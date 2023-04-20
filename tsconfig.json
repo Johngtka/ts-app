@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
-        "rootDir": ".",
-        "outDir": "./app",
-        "target":"ES6"
+        "rootDir": "src",
+        "outDir": "app",
+        "target": "ES6",
+        "module": "CommonJS"
     }
 }
