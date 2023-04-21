@@ -1,22 +1,19 @@
-interface Datas {
-    date?: object;
-    iteration?: number;
-}
-class Dog implements Datas {
-    public name: string = "zoe";
-    public haircolor: string = "red";
-    public date = new Date();
-
-    possIt(): void {
+class Dog {
+    constructor() {
+        this.name = "zoe";
+        this.haircolor = "red";
+        this.date = new Date();
+    }
+    possIt() {
         console.log();
         const par = document.createElement("p");
         document.body.appendChild(par);
         par.innerHTML =
             "My dog name is " +
-            this.name.toUpperCase() +
-            " and she have " +
-            this.haircolor.toUpperCase() +
-            " color";
+                this.name.toUpperCase() +
+                " and she have " +
+                this.haircolor.toUpperCase() +
+                " color";
         par.style.textAlign = "center";
         par.classList.add("ts-txt");
     }
@@ -24,16 +21,17 @@ class Dog implements Datas {
 const A = new Dog();
 A.possIt();
 class Time extends Dog {
-    private timer = this.date;
-
+    constructor() {
+        super(...arguments);
+        this.timer = this.date;
+    }
     DoneClk() {
         let tim = document.createElement("p");
         document.body.appendChild(tim);
         tim.classList.add("timer");
         return tim;
     }
-
-    clk(): void {
+    clk() {
         let day = this.timer.getDate();
         let month = this.timer.getMonth() + 1;
         let year = this.timer.getFullYear();
