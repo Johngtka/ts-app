@@ -8,7 +8,6 @@ class Dog implements Datas {
     public date = new Date();
 
     possIt(): void {
-        console.log();
         const par = document.createElement("p");
         document.body.appendChild(par);
         par.innerHTML =

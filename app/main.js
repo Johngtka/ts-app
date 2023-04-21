@@ -5,7 +5,6 @@ class Dog {
         this.date = new Date();
     }
     possIt() {
-        console.log();
         const par = document.createElement("p");
         document.body.appendChild(par);
         par.innerHTML =
